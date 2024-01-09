@@ -1,30 +1,26 @@
 import logo from "./logo.svg";
-import { Button } from "@mui/material/";
+import { Button, styled } from "@mui/material/";
 import { Add, Settings } from "@mui/icons-material";
 
 function App() {
+  const BlueButton = styled(Button)(({ theme }) => ({
+    backgroundColor: "skyblue",
+    color: "#888",
+    margin: 5,
+    "&:hover": { backgroundColor: "lightblue" },
+    "&:disabled": { backgroundColor: "gray", color: "white" },
+  }));
+
   return (
     <div className="App">
       <Button variant="text">Text</Button>
       <Button startIcon={<Settings />} variant="contained">
         Contained
       </Button>
-      <Button endIcon={<Add />} variant="outlined" disabled>
+      <Button color="secondary" endIcon={<Add />} variant="contained">
         Outlined
       </Button>
-      <Button
-        variant="contained"
-        disabled
-        sx={{
-          backgroundColor: "skyblue",
-          color: "#888",
-          margin: 5,
-          "&:hover": { backgroundColor: "lightblue" },
-          "&:disabled": { backgroundColor: "gray", color: "white" },
-        }}
-      >
-        My unique button
-      </Button>
+      <BlueButton>My button</BlueButton>
     </div>
   );
 }
