@@ -7,9 +7,12 @@ import {
   InputBase,
   Badge,
   Avatar,
+  Menu,
+  MenuItem,
 } from "@mui/material";
 import { Public, Mail, Notifications } from "@mui/icons-material";
 import React from "react";
+import { useState } from "react";
 
 const StyledToolBar = styled(Toolbar)({
   display: "flex",
@@ -43,6 +46,7 @@ const UserBox = styled(Box)(({ theme }) => ({
 }));
 
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
   return (
     <AppBar position="sticky">
       <StyledToolBar>
@@ -63,15 +67,36 @@ const Navbar = () => {
           <Avatar
             sx={{ width: "3em", height: "3em" }}
             src="https://media.licdn.com/dms/image/D5635AQHmtYRtACb8HA/profile-framedphoto-shrink_400_400/0/1695841973114?e=1705708800&v=beta&t=zG1drtTS1XjYVD7t0MHYj57qmZhCNvLF6Gq_8TJgS_U"
+            onClick={(e) => setOpen(true)}
           />
         </Icons>
         <UserBox>
           <Avatar
             sx={{ width: "3em", height: "3em" }}
             src="https://media.licdn.com/dms/image/D5635AQHmtYRtACb8HA/profile-framedphoto-shrink_400_400/0/1695841973114?e=1705708800&v=beta&t=zG1drtTS1XjYVD7t0MHYj57qmZhCNvLF6Gq_8TJgS_U"
+            onClick={(e) => setOpen(true)}
           />
         </UserBox>
       </StyledToolBar>
+      <Menu
+        id="demo-positioned-menu"
+        aria-labelledby="demo-positioned-button"
+        // anchorEl={anchorEl}
+        open={open}
+        onClose={(e) => setOpen(false)}
+        anchorOrigin={{
+          vertical: "top",
+          horizontal: "right",
+        }}
+        transformOrigin={{
+          vertical: "top",
+          horizontal: "left",
+        }}
+      >
+        <MenuItem>Profile</MenuItem>
+        <MenuItem>My account</MenuItem>
+        <MenuItem>Logout</MenuItem>
+      </Menu>
     </AppBar>
   );
 };
