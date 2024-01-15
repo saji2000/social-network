@@ -18,6 +18,7 @@ import {
   AccountBox,
 } from "@mui/icons-material";
 
+//Side bar component
 const Sidebar = () => {
   return (
     <Box
