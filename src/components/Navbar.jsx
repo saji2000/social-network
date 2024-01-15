@@ -66,14 +66,14 @@ const Navbar = () => {
           </Badge>
           <Avatar
             sx={{ width: "3em", height: "3em" }}
-            src="https://media.licdn.com/dms/image/D5635AQHmtYRtACb8HA/profile-framedphoto-shrink_400_400/0/1695841973114?e=1705708800&v=beta&t=zG1drtTS1XjYVD7t0MHYj57qmZhCNvLF6Gq_8TJgS_U"
+            src={require("../images/Sajad.jpeg")}
             onClick={(e) => setOpen(true)}
           />
         </Icons>
         <UserBox>
           <Avatar
             sx={{ width: "3em", height: "3em" }}
-            src="https://media.licdn.com/dms/image/D5635AQHmtYRtACb8HA/profile-framedphoto-shrink_400_400/0/1695841973114?e=1705708800&v=beta&t=zG1drtTS1XjYVD7t0MHYj57qmZhCNvLF6Gq_8TJgS_U"
+            src={require("../images/Sajad.jpeg")}
             onClick={(e) => setOpen(true)}
           />
         </UserBox>
