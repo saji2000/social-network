@@ -6,6 +6,7 @@ import {
   ListItemIcon,
   ListItemText,
   ListItemButton,
+  Switch,
 } from "@mui/material";
 
 import {
@@ -16,6 +17,7 @@ import {
   Person,
   Settings,
   AccountBox,
+  ModeNight,
 } from "@mui/icons-material";
 
 //Side bar component
@@ -82,6 +84,14 @@ const Sidebar = () => {
               <AccountBox />
             </ListItemIcon>
             <ListItemText primary="Profile" />
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton component="a" href="#simple-list">
+            <ListItemIcon>
+              <ModeNight />
+            </ListItemIcon>
+            <Switch />
           </ListItemButton>
         </ListItem>
       </List>
