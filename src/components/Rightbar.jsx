@@ -44,11 +44,16 @@ const friends = [
   },
 ];
 
+/**
+ * Rightbar component that displays online friends.
+ * It shows a varying number of avatars based on screen size.
+ */
 const Rightbar = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
   const [maxFriends, setMaxFriends] = useState(6);
 
+  // modifying the friend's list size based on the screen size
   useEffect(() => {
     setMaxFriends(isSmallScreen ? 4 : 6);
     console.log(isSmallScreen);
