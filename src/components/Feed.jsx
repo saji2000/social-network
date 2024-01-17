@@ -34,7 +34,6 @@ const Feed = () => {
           src={item.src}
           avatar={<Avatar src={item.avatarSrc} />}
         >
-          {console.log(item)}
           {item.description}
         </Post>
       ))}
