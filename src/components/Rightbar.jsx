@@ -1,50 +1,21 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import {
-  Box,
-  Typography,
   Avatar,
   AvatarGroup,
-  useTheme,
-  useMediaQuery,
+  Box,
+  Divider,
   ImageList,
   ImageListItem,
+  List,
+  ListItem,
+  ListItemAvatar,
+  ListItemText,
+  Typography,
+  useTheme,
+  useMediaQuery,
 } from "@mui/material";
-
-const friends = [
-  {
-    alt: "Remy Sharp",
-    src: "https://material-ui.com/static/images/avatar/1.jpg",
-  },
-  {
-    alt: "Travis Howard",
-    src: "https://material-ui.com/static/images/avatar/2.jpg",
-  },
-  {
-    alt: "Cindy Baker",
-    src: "https://material-ui.com/static/images/avatar/3.jpg",
-  },
-  {
-    alt: "Agnes Walker",
-    src: "https://material-ui.com/static/images/avatar/7.jpg",
-  },
-  {
-    alt: "Trevor Henderson",
-    src: "https://material-ui.com/static/images/avatar/6.jpg",
-  },
-  {
-    alt: "Trevor Henderson",
-    src: "",
-  },
-  {
-    alt: "Trevor Henderson",
-    src: "https://material-ui.com/static/images/avatar/8.jpg",
-  },
-  {
-    alt: "Trevor Henderson",
-    src: "https://material-ui.com/static/images/avatar/9.jpg",
-  },
-];
+import { friends, images, conversations } from "../data/data";
 
 /**
  * Rightbar component that displays online friends.
@@ -76,25 +47,49 @@ const Rightbar = () => {
           Latest Photos
         </Typography>
         <ImageList cols={3} rowHeight={100} gap={5}>
-          <ImageListItem>
-            <img
-              src="https://material-ui.com/static/images/image-list/breakfast.jpg"
-              alt=""
-            />
-          </ImageListItem>
-          <ImageListItem>
-            <img
-              src="https://material-ui.com/static/images/image-list/burgers.jpg"
-              alt=""
-            />
-          </ImageListItem>
-          <ImageListItem>
-            <img
-              src="https://material-ui.com/static/images/image-list/camera.jpg"
-              alt=""
-            />
-          </ImageListItem>
+          {images.map((item, index) => {
+            return (
+              <ImageListItem>
+                <img key={item.src} src={item.src} alt={item.alt} />
+              </ImageListItem>
+            );
+          })}
         </ImageList>
+        <Typography variant="h6" fontWeight="100">
+          Latest Conversations
+        </Typography>
+        <List
+          sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
+        >
+          {conversations.map((item, index) => {
+            return (
+              <>
+                <ListItem alignItems="flex-start" key={item.avatarSrc}>
+                  <ListItemAvatar>
+                    <Avatar alt={item.avatarAlt} src={item.avatarSrc} />
+                  </ListItemAvatar>
+                  <ListItemText
+                    primary={item.primary}
+                    secondary={
+                      <React.Fragment>
+                        <Typography
+                          sx={{ display: "inline" }}
+                          component="span"
+                          variant="body2"
+                          color="text.primary"
+                        >
+                          {item.author}
+                        </Typography>
+                        {item.secondary}
+                      </React.Fragment>
+                    }
+                  />
+                </ListItem>
+                <Divider variant="inset" component="li" />
+              </>
+            );
+          })}
+        </List>
       </Box>
     </Box>
   );
