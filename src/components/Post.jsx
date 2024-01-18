@@ -18,7 +18,7 @@ const Post = ({ children, title, date, src, avatar }) => {
   });
   return (
     <div>
-      <Card sx={{ margin: "1em" }}>
+      <Card mb="0.5em">
         <CardHeader
           avatar={styledAvatar}
           action={
