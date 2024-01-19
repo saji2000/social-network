@@ -18,7 +18,7 @@ const Post = ({ children, title, date, src, avatar }) => {
   });
   return (
     <div>
-      <Card mb="0.5em">
+      <Card>
         <CardHeader
           avatar={styledAvatar}
           action={
