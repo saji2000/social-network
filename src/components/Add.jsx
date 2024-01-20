@@ -1,7 +1,31 @@
 import React from "react";
 import { useState } from "react";
-import { Tooltip, Fab, Modal, Box, Typography } from "@mui/material/";
+import {
+  Tooltip,
+  Fab,
+  Modal,
+  Box,
+  Typography,
+  styled,
+  Avatar,
+  TextField,
+} from "@mui/material/";
 import AddIcon from "@mui/icons-material/Add";
+import SajadImage from "../images/Sajad.jpeg";
+
+const StyledModal = styled(Modal)({
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+});
+
+const UserBox = styled(Box)({
+  display: "flex",
+  alignItems: "center",
+  gap: "0.5em",
+  marginBottom: "1em",
+});
+
 const Add = () => {
   const [open, setOpen] = useState(false);
   return (
@@ -19,14 +43,35 @@ const Add = () => {
           <AddIcon />
         </Fab>
       </Tooltip>
-      <Modal
+      <StyledModal
         open={open}
         onClose={(e) => setOpen(false)}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box>Hello</Box>
-      </Modal>
+        <Box
+          width={"30em"}
+          height={"20em"}
+          bgcolor="white"
+          p={"2em"}
+          borderRadius={"2em"}
+        >
+          <Typography variant="h6" color="gray" textAlign="center">
+            Create post
+          </Typography>
+          <UserBox>
+            <Avatar src={SajadImage} sx={{ width: "2em", height: "2em" }} />
+            <Typography>Sajad Daneshmand</Typography>
+          </UserBox>
+          <TextField
+            id="standard-helperText"
+            label="Helper text"
+            defaultValue="Default Value"
+            helperText="Some important text"
+            variant="standard"
+          />
+        </Box>
+      </StyledModal>
     </div>
   );
 };
