@@ -64,10 +64,11 @@ const Add = () => {
             <Typography>Sajad Daneshmand</Typography>
           </UserBox>
           <TextField
-            id="standard-helperText"
-            label="Helper text"
-            defaultValue="Default Value"
-            helperText="Some important text"
+            sx={{ width: "100%" }}
+            id="standard-multiline-static"
+            multiline
+            rows={1}
+            placeholder="What's on your mind?"
             variant="standard"
           />
         </Box>
