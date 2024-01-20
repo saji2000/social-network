@@ -9,9 +9,19 @@ import {
   styled,
   Avatar,
   TextField,
+  Stack,
+  Button,
+  ButtonGroup,
 } from "@mui/material/";
 import AddIcon from "@mui/icons-material/Add";
 import SajadImage from "../images/Sajad.jpeg";
+import {
+  EmojiEmotions,
+  Image,
+  VideoCameraBack,
+  PersonAdd,
+  DateRange,
+} from "@mui/icons-material";
 
 const StyledModal = styled(Modal)({
   display: "flex",
@@ -50,8 +60,8 @@ const Add = () => {
         aria-describedby="modal-modal-description"
       >
         <Box
-          width={"30em"}
-          height={"20em"}
+          width={"25em"}
+          height={"15em"}
           bgcolor="white"
           p={"2em"}
           borderRadius={"2em"}
@@ -71,6 +81,22 @@ const Add = () => {
             placeholder="What's on your mind?"
             variant="standard"
           />
+          <Stack direction="row" gap={1} mt={2} mb={3}>
+            <EmojiEmotions />
+            <Image />
+            <VideoCameraBack />
+            <PersonAdd />
+          </Stack>
+          <ButtonGroup
+            fullWidth
+            variant="contained"
+            aria-label="outlined primary button group"
+          >
+            <Button>Post</Button>
+            <Button sx={{ width: "40%" }}>
+              <DateRange />
+            </Button>
+          </ButtonGroup>
         </Box>
       </StyledModal>
     </div>
