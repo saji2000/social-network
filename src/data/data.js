@@ -93,10 +93,3 @@ export const posts = [
       "Shrimp and Chorizo Paella is a vibrant Spanish rice dish that combines succulent shrimp and flavorful chorizo sausage with saffron-infused rice, creating a delicious and colorful meal.",
   },
 ];
-
-// export default {
-//   friends,
-//   images,
-//   conversations,
-//   posts,
-// };
